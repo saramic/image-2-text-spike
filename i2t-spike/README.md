@@ -3,6 +3,12 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
+## TODO
+
+  - [ ] static html cut 1
+  - [ ] deploy to heroku
+  - [ ] add a frontend framework (ReactJS) or 2 (Ember)
+
 Things you may want to cover:
 
 * Ruby version
