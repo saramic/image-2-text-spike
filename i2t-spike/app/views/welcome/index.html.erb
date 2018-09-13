@@ -1,7 +1,11 @@
 <h1>Play</h1>
 
-<pre><%= @term %></pre>
+<form>
+  <input type="text" name="term" placeholder="guess?" />
+  <input type="hidden" name="seed" value="<%= @seed %>" />
+  <input type="submit" name="Submit" />
+</form>
 
-<% @images.each do |image| %>
+<% @images && @images.each do |image| %>
   <img src="<%= image %>">
 <% end %>
