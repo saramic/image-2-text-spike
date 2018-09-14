@@ -5,12 +5,18 @@ application up and running.
 
 ## TODO
 
-  - [ ] static html cut 1
-  - [ ] deploy to heroku
+  - [x] static html cut 1
+  - [x] deploy to heroku
     attempting to deploy using git subtree split?
     ```
     git subtree push --prefix i2t-spike heroku master
+
+    # or
+    
+    git push heroku `git subtree split --prefix i2t-spike master`:master --force    
     ```
+  - [ ] make somewhat playable
+  - [ ] push static data back to a model
   - [ ] add a frontend framework (ReactJS) or 2 (Ember)
 
 Things you may want to cover:
