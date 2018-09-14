@@ -7,6 +7,10 @@ application up and running.
 
   - [ ] static html cut 1
   - [ ] deploy to heroku
+    attempting to deploy using git subtree split?
+    ```
+    git subtree push --prefix i2t-spike heroku master
+    ```
   - [ ] add a frontend framework (ReactJS) or 2 (Ember)
 
 Things you may want to cover:
