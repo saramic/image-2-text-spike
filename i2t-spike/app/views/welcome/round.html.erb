@@ -1,0 +1,15 @@
+<h1>Play - <%= "Round #{@round} of #{@rounds}" %></h1>
+
+<%= link_to 'Start again', root_path %>
+
+<form>
+  <input type="text" name="term" placeholder="guess?" />
+  <input type="hidden" name="seed" value="<%= @seed %>" />
+  <input type="hidden" name="round" value="<%= @round %>" />
+  <input type="hidden" name="rounds" value="<%= @rounds %>" />
+  <input type="submit" name="Submit" />
+</form>
+
+<% @images && @images.each do |image| %>
+  <img src="<%= image %>">
+<% end %>

@@ -1,11 +1,3 @@
-<h1>Play</h1>
+<h1>Images 2 text</h1>
 
-<form>
-  <input type="text" name="term" placeholder="guess?" />
-  <input type="hidden" name="seed" value="<%= @seed %>" />
-  <input type="submit" name="Submit" />
-</form>
-
-<% @images && @images.each do |image| %>
-  <img src="<%= image %>">
-<% end %>
+<%= link_to 'Start the game', game_path(round: @round, rounds: @rounds) %>

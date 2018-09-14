@@ -1,0 +1,11 @@
+<h1>Play</h1>
+
+<%= link_to 'Start again', root_path %>
+
+<form action="<%= round_path(@round) %>">
+  <input type="hidden" name="seed" value="<%= @seed %>" />
+  <input type="hidden" name="round" value="<%= @round %>" />
+  <input type="hidden" name="rounds" value="<%= @rounds %>" />
+  <input type="submit" name="Submit" value="<%= "Round #{@round} of #{@rounds}" %>"/>
+</form>
+
