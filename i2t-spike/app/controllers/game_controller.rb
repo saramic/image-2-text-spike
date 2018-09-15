@@ -1,31 +1,31 @@
 class GameController < ApplicationController
   def game
-    game = Game.new
-    @round = params.has_key?(:round) ? params[:round].to_i : 1
-    @rounds = params.has_key?(:rounds) ? params[:rounds].to_i : game.term_count
-    @seed = game.seed
+    if params.has_key?(:id)
+      @game = Game.find(params[:id])
+    else
+      @game = Game.new
+      @game.save
+    end
+    @game.round = params[:round].to_i if params.has_key?(:round)
   end
 
   def round
-    @seed = params[:seed].to_i
-    @round = params[:round].to_i
-    @rounds = params[:rounds].to_i
-    game = Game.new(seed: @seed, round: @round)
+    @game = Game.find(params[:id])
+    @game.round = params[:round].to_i if params.has_key?(:round)
     if params[:term]
-      if params[:term] == game.term
+      if params[:term] == @game.term
         flash.clear
         flash[:success] = "#{params[:term].inspect} is correct"
-        @round = @round + 1
-        if @round > @rounds
+        if @game.round >= @game.rounds
           redirect_to win_path
         else
-          redirect_to game_path(round: @round, rounds: @rounds)
+          redirect_to game_path(@game.id, round: @game.round + 1)
         end
       else
         flash.clear
         flash[:warn] = "#{params[:term].inspect} is NOT correct try again"
       end
     end
-    @images = game.images
+    @images = @game.images
   end
 end
