@@ -10,13 +10,11 @@ class Game < ApplicationRecord
   end
 
   def term
-    @@game_images ||= YAML.load(File.open('config/initializers/game_images.yaml'))
-    @term = @@game_images['terms'].keys.sort_by{ rng }.first(rounds)[round - 1]
+    @term = Term.all.sort_by{ rng }.first(rounds)[round - 1].term
   end
 
   def rounds
-    @@game_images ||= YAML.load(File.open('config/initializers/game_images.yaml'))
-    [@@game_images['terms'].keys.count, 10].min # max of 10 rounds
+    [Term.all.count, 10].min # max of 10 rounds
   end
 
   def images

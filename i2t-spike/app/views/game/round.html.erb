@@ -1,6 +1,7 @@
 <h1>Play - <%= "Round #{@game.round} of #{@game.rounds}" %></h1>
 
 <%= link_to 'Start again', root_path %>
+<%= @game.term %>
 
 <form action="<%= round_path(@game.id) %>">
   <input type="hidden" name="round" value="<%= @game.round %>" />
