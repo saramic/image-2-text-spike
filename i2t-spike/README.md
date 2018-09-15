@@ -15,7 +15,7 @@ application up and running.
     
     git push heroku `git subtree split --prefix i2t-spike master`:master --force    
     ```
-  - [ ] make somewhat playable
+  - [x] make somewhat playable
   - [ ] push static data back to a model
   - [ ] add a frontend framework (ReactJS) or 2 (Ember)
 
