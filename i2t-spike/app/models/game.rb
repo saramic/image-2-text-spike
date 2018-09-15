@@ -12,7 +12,7 @@ class Game
   end
 
   def term_count
-    @@game_images['terms'].keys.count
+    [@@game_images['terms'].keys.count, 10].min # max of 10 rounds
   end
 
   def images
