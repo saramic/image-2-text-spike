@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'nokogiri'
+
 class ImageSearchService
   def initialize(search_term)
     @search_term = search_term
