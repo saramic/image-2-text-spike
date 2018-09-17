@@ -19,7 +19,7 @@ class Game < ApplicationRecord
 
   def images
     @@game_images ||= YAML.load(File.open('config/initializers/game_images.yaml'))
-    @@game_images['terms'][term]
+    @@game_images['terms'][term] || ImageSearchService.new(term).call
   end
 
   private
