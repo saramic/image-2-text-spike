@@ -13,3 +13,27 @@ On heroku [https://image-2-text.herokuapp.com/](https://image-2-text.herokuapp.c
 rails new i2t-bdd --database=postgresql --skip-test --no-rdoc --no-ri
 ```
 
+### 2 TDD and BDD framework
+
+```
+vi Gemfile
+  group :test do
+    # TDD
+    gem "rspec-rails"
+    # BDD
+    gem "rspec-example_steps"
+    gem "rspec-wait"
+
+    gem "capybara"
+  end
+
+rails generate rspec:install
+
+mkdir -p spec/features/flows
+vi spec/features/flows/play_a_game_of_i2t_spec.rb
+
+rails db:create db:migrate
+
+rspec
+```
+
