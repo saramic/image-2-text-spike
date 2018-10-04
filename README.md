@@ -49,3 +49,7 @@ rspec
 * add a view
 * start a test to press a start new game button
 
+### 4 setup page fragments
+
+./spec/support/features/page_fragments
+
