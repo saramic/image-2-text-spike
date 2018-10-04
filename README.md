@@ -37,3 +37,12 @@ rails db:create db:migrate
 rspec
 ```
 
+### 3 TDD a welcome controller
+
+```
+rails generate rspec:controller welcome
+rails generate controller welcome
+
+rspec
+```
+
