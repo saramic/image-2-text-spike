@@ -9,6 +9,21 @@ application up and running.
 
 ## TODO
 
+  - [ ] login against [devise](https://github.com/plataformatec/devise)
+    following along with https://serverless-stack.com/chapters/create-a-login-page.html
+
+  - [ ] omniauth for github and/or twitter
+  - [ ] add bootstrap or [react semantic-ui](https://react.semantic-ui.com/)
+  - [ ] update capyabara to from [firefix blog](https://underpantsgnome.com/2018/02/26/integration-testing-a-rails-react-app-with-rspec/) to
+    [chrome](https://mikecoutermarsh.com/rails-capybara-selenium-chrome-driver-setup/)
+  - [ ] sort out feature specs ReactJS Rails and capybara
+    - https://pillow.codes/how-to-set-up-integration-test-for-react-app-rails-backend-917a16ac04e3
+    - https://medium.com/@ethanryan/testing-your-app-in-the-browser-with-capybara-rails-backend-react-frontend-e409671c4596
+  - [ ] CSRF tokens
+    - https://blog.codeship.com/using-react-inside-your-rails-apps/
+  - [ ] data via axios
+    - https://www.sitepoint.com/react-rails-5-1/
+
   - [x] static html cut 1
   - [x] deploy to heroku
     attempting to deploy using git subtree split?
