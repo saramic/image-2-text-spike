@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   get '/game/round/:id', to: 'game#round', as: 'round'
   get '/win', to: 'welcome#win', as: 'win'
 
+  namespace :api do
+    resources :games
+  end
   root 'welcome#index'
 end
