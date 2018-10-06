@@ -40,6 +40,7 @@ class Home extends Component {
             <Link to="/rjs-game">Game</Link>
             <a href="/game">Game Rails</a>
             <a href="/admin">Admin</a>
+            <a href="/login">Login</a>
           </ul>
           { games && games.length
             ? <ul>

@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Game from './pages/Game'
 import Round from './pages/Round'
+import Login from './components/Login'
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/rjs-game" component={Game} />
             <Route path="/rjs-game/round" component={Round} />
+            <Route path="/login" component={Login} />
           </Switch>
         </BrowserRouter>
       </div>
