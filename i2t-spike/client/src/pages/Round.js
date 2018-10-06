@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Round = () => (
   <div>
     Round
-    <Link to="/game">Game</Link>
+    <Link to="/rjs-game">Game</Link>
   </div>
 )
 

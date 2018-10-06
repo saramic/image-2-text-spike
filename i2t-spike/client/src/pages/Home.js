@@ -6,7 +6,8 @@ const Home = () => (
     Home
     <ul>
       <Link to="/">Home</Link>
-      <Link to="/game">Game</Link>
+      <Link to="/rjs-game">Game</Link>
+      <a href="/game">Game Rails</a>
       <a href="/admin">Admin</a>
     </ul>
   </div>
