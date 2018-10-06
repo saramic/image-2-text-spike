@@ -3,6 +3,10 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
+## More reading
+  - use of [fetch](https://github.com/github/fetch)
+  - heroku blog on [react, rails and active admin](https://blog.heroku.com/a-rock-solid-modern-web-stack)
+
 ## TODO
 
   - [x] static html cut 1
@@ -25,7 +29,7 @@ application up and running.
 
     AdminUser.create!(email: 'admin@example.com', password: 'password...', password_confirmation: 'password...')
     ```
-  - [ ] add react client
+  - [x] add react client
     ```
     heroku buildpacks:add heroku/nodejs --index 1
     heroku buildpacks:add heroku/ruby --index 2

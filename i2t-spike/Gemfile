@@ -70,6 +70,8 @@ group :test do
   gem "rspec-wait"
 
   gem "capybara"
+  gem "capybara-screenshot"
+  gem "database_cleaner"
 
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'

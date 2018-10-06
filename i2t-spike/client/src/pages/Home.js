@@ -22,10 +22,10 @@ class Home extends Component {
   getGames() {
     this.fetch('/api/games')
       .then(games => {
-        if (games.length) {
+        if (games && games.length) {
           this.setState({games: games})
         } else {
-          this.setStaet({games: []})
+          this.setState({games: []})
         }
       })
   }
