@@ -25,6 +25,11 @@ application up and running.
 
     AdminUser.create!(email: 'admin@example.com', password: 'password...', password_confirmation: 'password...')
     ```
+  - [ ] add react clinet
+    ```
+    heroku buildpacks:add heroku/nodejs --index 1
+    heroku buildpacks:add heroku/ruby --index 2
+    ```
   - [ ] login per user
   - [ ] add a frontend framework (ReactJS) or 2 (Ember)
   - [ ] 2 users at a time
