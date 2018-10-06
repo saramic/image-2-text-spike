@@ -25,11 +25,21 @@ application up and running.
 
     AdminUser.create!(email: 'admin@example.com', password: 'password...', password_confirmation: 'password...')
     ```
-  - [ ] add react clinet
+  - [ ] add react client
     ```
     heroku buildpacks:add heroku/nodejs --index 1
     heroku buildpacks:add heroku/ruby --index 2
     ```
+    Now can
+      * go to Rails game https://image-2-text.herokuapp.com/game
+      * go to ReactJS https://image-2-text.herokuapp.com/
+      * go to Rails ActiveAdmin https://image-2-text.herokuapp.com/admin/login
+
+    What happens with conflict
+      * ReactJS localhost:3000/game
+      * ReactJS localhost:3000/game/round
+      * Rails   localhost:3001/game
+
   - [ ] login per user
   - [ ] add a frontend framework (ReactJS) or 2 (Ember)
   - [ ] 2 users at a time
