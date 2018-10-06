@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Routes from './Routes'
 import { Link } from 'react-router-dom'
-import { Navbar } from 'react-bootstrap'
+import { Nav, Navbar, NavItem } from 'react-bootstrap'
 import './App.css'
 
 class App extends Component {
@@ -12,10 +12,16 @@ class App extends Component {
         <Navbar fluid collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <Link to="/">Home</Link>
+              <Link to="/">i2t</Link>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
+          <Navbar.Collapse>
+            <Nav pullRight>
+              <NavItem href="/signup">Signup</NavItem>
+              <NavItem href="/login">Login</NavItem>
+            </Nav>
+          </Navbar.Collapse>
         </Navbar>
         <Routes />
       </div>

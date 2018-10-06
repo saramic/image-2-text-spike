@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Game from './pages/Game'
 import Round from './pages/Round'
 import Login from './components/Login'
+import NotFound from "./containers/NotFound"
 
 export default () =>
   <Switch>
@@ -11,4 +12,5 @@ export default () =>
     <Route exact path="/rjs-game" component={Game} />
     <Route path="/rjs-game/round" component={Round} />
     <Route path="/login" component={Login} />
+    <Route component={NotFound} />
   </Switch>
