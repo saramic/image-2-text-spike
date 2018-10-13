@@ -287,4 +287,17 @@ Devise.setup do |config|
   # ActiveSupport.on_load(:devise_failure_app) do
   #   include Turbolinks::Controller
   # end
+
+  config.jwt do |jwt|
+    jwt.secret = ENV.fetch('DEVISE_JWT_SECRET_KEY', 'SOME SECRET KEY')
+    jwt.dispatch_requests = [
+        ['POST', %r{^/login$}]
+    ]
+    jwt.revocation_requests = [
+        ['DELETE', %r{^/logout$}]
+    ]
+    jwt.expiration_time = 1.day.to_i
+  end
+
+  config.navigational_formats = []
 end
