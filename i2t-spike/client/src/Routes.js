@@ -1,4 +1,5 @@
 import React from 'react'
+import AppliedRoute from "./components/AppliedRoute";
 import { Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
 import Game from './pages/Game'
@@ -6,11 +7,11 @@ import Round from './pages/Round'
 import Login from './components/Login'
 import NotFound from "./containers/NotFound"
 
-export default () =>
+export default ({ childProps }) =>
   <Switch>
-    <Route exact path="/" component={Home} />
-    <Route exact path="/rjs-game" component={Game} />
-    <Route path="/rjs-game/round" component={Round} />
-    <Route path="/login" component={Login} />
+    <AppliedRoute exact path="/" component={Home}  props={childProps} />
+    <AppliedRoute exact path="/rjs-game" component={Game} props={childProps} />
+    <AppliedRoute path="/rjs-game/round" component={Round} props={childProps} />
+    <AppliedRoute path="/login" component={Login} props={childProps} />
     <Route component={NotFound} />
   </Switch>

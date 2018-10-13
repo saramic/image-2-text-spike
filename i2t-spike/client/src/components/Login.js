@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
 import './Login.css'
+import axios from 'axios'
 
 export default class Login extends Component {
   constructor (props) {
@@ -22,8 +23,23 @@ export default class Login extends Component {
     })
   }
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     event.preventDefault()
+
+    try {
+      // TODO how to pass env vars in via webpack?
+      // const url = `${API_BASE_URL}/users/sign_in`
+      const url = 'http://localhost:3001/login'
+      const formData = new FormData()
+      formData.append('email', this.state.email)
+      formData.append('password', this.state.password)
+      const options = { headers: { 'Content-Type': 'multipart/form-data' } };
+
+      await axios.get(url, formData, options)
+      this.props.userHasAuthenticated(true);
+    } catch (e) {
+      alert(e.message)
+    }
   }
 
 

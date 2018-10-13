@@ -7,6 +7,33 @@ application up and running.
   - use of [fetch](https://github.com/github/fetch)
   - heroku blog on [react, rails and active admin](https://blog.heroku.com/a-rock-solid-modern-web-stack)
 
+
+## Login
+
+- generally following along with
+  https://serverless-stack.com/chapters/load-the-state-from-the-session.html
+
+- Setup Devise with JWT
+  https://medium.com/@mazik.wyry/rails-5-api-jwt-setup-in-minutes-using-devise-71670fd4ed03
+  - setup JWT revocation
+    http://waiting-for-dev.github.io/blog/2017/01/23/stand_up_for_jwt_revocation/
+  - another perspective and what to do on the front end?
+    https://stackoverflow.com/questions/50480626/how-to-use-devise-jwt-with-devise-for-signin-signup-and-signout-in-rails-api
+  - core documentation on devise-jwt
+    https://github.com/waiting-for-dev/devise-jwt
+
+- another article on serverless react app
+  https://medium.com/@jameshamann/serverless-react-web-app-with-aws-amplify-part-three-d3f1a30176e8
+
+- CSRF protection for classical rails apps only
+  https://stackoverflow.com/questions/35181340/rails-cant-verify-csrf-token-authenticity-when-making-a-post-request
+  - attempt to make it work with SPA
+    https://github.com/rails/rails/issues/32785
+    https://stackoverflow.com/questions/50122298/rails-csrf-protection-with-single-page-application-react-angular-ember
+
+- what about custom devise strategy?
+  https://medium.com/@lukerollans/implementing-jwt-authentication-as-a-custom-devise-strategy-54948bddb134
+
 ## TODO
 
   - [ ] login against [devise](https://github.com/plataformatec/devise)

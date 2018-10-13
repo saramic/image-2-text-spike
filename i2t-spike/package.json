@@ -1,6 +1,29 @@
 {
   "name": "i2t-spike",
-  "dependencies": {},
+  "dependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@babel/runtime": "^7.1.2",
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "path": "^0.12.7",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.5.2",
+    "react-router": "^4.3.1",
+    "react-router-bootstrap": "^0.24.4",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.0.4",
+    "webpack": "4.19.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-notifier": "^1.7.0"
+  },
   "version": "1.0.0",
   "license": "MIT",
   "engines": {
@@ -9,6 +32,17 @@
   "scripts": {
     "build": "cd client && npm install && npm run build && cd ..",
     "deploy": "cp -a client/build/. public/",
-    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+    "postinstall": "npm run build && npm run deploy && echo 'Client built!'",
+    "watch": "webpack --watch"
+  },
+  "babel": {
+    "plugins": [
+      "transform-class-properties",
+      "@babel/plugin-transform-runtime"
+    ],
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
   }
 }
