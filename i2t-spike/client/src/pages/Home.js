@@ -37,7 +37,7 @@ class Home extends Component {
           Home
           <ul>
             <Link to="/">Home</Link>
-            <Link to="/rjs-game">Game</Link>
+            <Link to="/rjs-game/round">New Game</Link>
             <a href="/game">Game Rails</a>
             <a href="/admin">Admin</a>
             <a href="/login">Login</a>

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Game /> snapshot 1`] = `
+<div>
+  Game
+  <a
+    href="/rjs-game/round"
+    onClick={[Function]}
+  >
+    Round
+  </a>
+</div>
+`;

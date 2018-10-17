@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Round = () => (
   <div>
-    Round
-    <Link to="/rjs-game">Game</Link>
+    Round <span className="round">1</span>
   </div>
 )
 

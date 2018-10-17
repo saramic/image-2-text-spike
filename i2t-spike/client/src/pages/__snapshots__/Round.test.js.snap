@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Round /> snapshot 1`] = `
+<div>
+  Round 
+  <span
+    className="round"
+  >
+    1
+  </span>
+</div>
+`;
