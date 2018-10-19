@@ -11,7 +11,7 @@ export default ({ childProps }) =>
   <Switch>
     <AppliedRoute exact path="/" component={Home}  props={childProps} />
     <AppliedRoute exact path="/rjs-game" component={Game} props={childProps} />
-    <AppliedRoute path="/rjs-game/round" component={Round} props={childProps} />
+    <AppliedRoute path="/rjs-game/round/:round" component={Round} props={childProps} />
     <AppliedRoute path="/login" component={Login} props={childProps} />
     <Route component={NotFound} />
   </Switch>

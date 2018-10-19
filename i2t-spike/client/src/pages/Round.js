@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export default class Round extends Component {
   static propTypes = {
@@ -18,8 +19,15 @@ export default class Round extends Component {
   constructor(props) {
     super(props)
     // TODO how to do this in 1 line?
-    const { guess, correct, round, images, term, seed } = props
+    const { guess, correct, images, term, seed } = props
+    const round = parseInt(props.match.params.round)
     this.state = { guess, correct, round, images, term, seed }
+    this.fetchRound()
+  }
+
+  componentWillReceiveProps(props) {
+    const round = parseInt(props.match.params.round)
+    this.setState(Object.assign(this.state, { round }))
     this.fetchRound()
   }
 
@@ -32,9 +40,9 @@ export default class Round extends Component {
   }
 
   fetchRound() {
-    this.fetch('/api/rounds/1')
-      .then(({ round, seed, images, term }) => {
-        this.setState(Object.assign(this.state, {round, seed, images, term}))
+    this.fetch(`/api/rounds/${this.state.round}`)
+      .then(({ seed, images, term }) => {
+        this.setState(Object.assign(this.state, { seed, images, term}))
       })
   }
 
@@ -77,6 +85,7 @@ export default class Round extends Component {
         onChange={this.handleGuess}
         disabled={this.state.correct}
       />
+          <Link to={`/rjs-game/round/${this.state.round + 1}`}>next</Link>
         </div>
       </div>
     )
