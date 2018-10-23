@@ -13,6 +13,8 @@ Capybara::Screenshot.webkit_options = {
 Capybara::Screenshot.autosave_on_failure = false
 Capybara::Screenshot.prune_strategy = :keep_last_run
 
+Capybara.server_port = 3001
+
 RSpec.configure do |config|
   config.after do |example|
     if example.metadata[:type] == :feature and example.metadata[:js] and example.exception.present?

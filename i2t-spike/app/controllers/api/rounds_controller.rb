@@ -8,7 +8,7 @@ module Api
           .all
           .sort_by{ random_number_generator(seed_str) }
           .first(rounds)[round - 1]
-          .term
+          &.term
       images = ImageSearchService
           .new(term)
           .call
