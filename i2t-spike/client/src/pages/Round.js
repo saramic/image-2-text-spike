@@ -94,33 +94,38 @@ export default class Round extends Component {
         {`Term: ${this.state.term}`}
         <div className="timer">time remaining: {this.state.seconds}</div>
         <button onClick={this.startCountDown}>start round</button>
-        <div className="clue-grid images">
-          {
-            [0,1,2].map((index) => (
-              <div className="clue-grid__row">
-                {
-                  this.state.images.slice(index*width, ((index*width)+width)).map((image) => (
-                    <img
-                      className="clue-grid__item image"
-                      src={image.src}
-                      alt="query"
-                      key={image.id}
-                    />
-                  ))
-                }
-              </div>
-            ))
-          }
-        </div>
-        <div>
-      <textarea
-        name="guess"
-        className="guess-box"
-        value={this.state.guess}
-        onChange={this.handleGuess}
-        disabled={this.state.correct}
-      />
-          <Link to={`/rjs-game/round/${this.state.round + 1}`}>next</Link>
+        <div className="game-area">
+          <div className="clue-grid images">
+            {
+              [0,1,2].map((index) => (
+                <div className="clue-grid__row">
+                  {
+                    this.state.images.slice(index*width, ((index*width)+width)).map((image) => (
+                      <div className="clue-grid__item">
+                        <img
+                          className="image"
+                          src={image.src}
+                          alt="query"
+                          key={image.id}
+                        />
+                      </div>
+                    ))
+                  }
+                </div>
+              ))
+            }
+          </div>
+          <div>
+            <textarea
+              name="guess"
+              placeholder="guess the phrase for the images"
+              className="guess-box"
+              value={this.state.guess}
+              onChange={this.handleGuess}
+              disabled={this.state.correct}
+            />
+            <Link to={`/rjs-game/round/${this.state.round + 1}`}>next</Link>
+          </div>
         </div>
       </div>
     )
