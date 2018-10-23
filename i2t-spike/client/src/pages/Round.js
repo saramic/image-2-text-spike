@@ -14,15 +14,19 @@ export default class Round extends Component {
     seed: null,
     term: null,
     images: [],
+    seconds: '10',
   };
 
   constructor(props) {
     super(props)
     // TODO how to do this in 1 line?
-    const { guess, correct, images, term, seed } = props
+    const { guess, correct, images, term, seed, seconds } = props
     const round = parseInt(props.match.params.round)
-    this.state = { guess, correct, round, images, term, seed }
+    this.state = { guess, correct, round, images, term, seed, seconds }
+    this.secondsRemaining = 10
     this.fetchRound()
+    this.startCountDown = this.startCountDown.bind(this);
+    this.tick = this.tick.bind(this);
   }
 
   componentWillReceiveProps(props) {
@@ -55,6 +59,27 @@ export default class Round extends Component {
     })
   }
 
+  tick() {
+    if (this.state.isTimeout) {
+      return
+    }
+    const sec = this.secondsRemaining;
+    this.setState({
+      seconds: (sec < 10) ? ("0" + sec) : sec
+    })
+    this.secondsRemaining--
+    console.log(this.state)
+    if (this.secondsRemaining < 0) {
+      this.setState({isTimeout: true})
+    }
+  }
+
+  startCountDown() {
+    this.secondsRemaining = 10
+    this.setState({isTimeout: false})
+    this.intervalHandle = setInterval(this.tick, 1000);
+  }
+
   render() {
     return(
       <div>
@@ -65,6 +90,8 @@ export default class Round extends Component {
         Round <span className="round">{this.state.round}</span>
         {`Seed: ${this.state.seed}`}
         {`Term: ${this.state.term}`}
+        <div className="timer">time remaining: {this.state.seconds}</div>
+        <button onClick={this.startCountDown}>start round</button>
         <div className="images">
           {
             this.state.images.map((image) => (
