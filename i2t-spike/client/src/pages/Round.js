@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './Round.scss';
 
 export default class Round extends Component {
   static propTypes = {
@@ -81,6 +82,7 @@ export default class Round extends Component {
   }
 
   render() {
+    const width = 3;
     return(
       <div>
         { this.state.correct ?
@@ -92,15 +94,21 @@ export default class Round extends Component {
         {`Term: ${this.state.term}`}
         <div className="timer">time remaining: {this.state.seconds}</div>
         <button onClick={this.startCountDown}>start round</button>
-        <div className="images">
+        <div className="clue-grid images">
           {
-            this.state.images.map((image) => (
-              <img
-                className="image"
-                src={image.src}
-                alt="query"
-                key={image.id}
-              />
+            [0,1,2].map((index) => (
+              <div className="clue-grid__row">
+                {
+                  this.state.images.slice(index*width, ((index*width)+width)).map((image) => (
+                    <img
+                      className="clue-grid__item image"
+                      src={image.src}
+                      alt="query"
+                      key={image.id}
+                    />
+                  ))
+                }
+              </div>
             ))
           }
         </div>
